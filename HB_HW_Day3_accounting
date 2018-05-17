@@ -1,0 +1,10 @@
+def customer_eval(): #defining the function
+    customerlog = open("customerorders.txt") #opening the file #split each line based on the | to make list of strings
+    for line in customerlog: # iterate through each line in customerlog
+        customerlog.split("|") # split each line into list of strings
+        customer_name = line[1] #assign customer name as line[1]
+        if float(line[2]) != float(line[3]): #if paid and expected are not equal
+            print customer_name + "paid" + line[2] + "expected" + line[3] 
+    customerlog.close()
+
+customer_eval()
